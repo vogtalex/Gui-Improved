@@ -108,7 +108,7 @@ button_1 = Button(
 
 canvas.create_window(150, 750, window=button_1)
 
-#Radio Buttons
+#Radio Button 1
 selected_visual = StringVar()
 selected_visual.set(' ')
 selections = (('Image', 'I'),
@@ -116,7 +116,6 @@ selections = (('Image', 'I'),
          ('Histogram', 'H'))
 
 height = 300
-# radio buttons
 for visual in selections:
     r = Radiobutton(
         window,
@@ -125,10 +124,35 @@ for visual in selections:
         variable=selected_visual,
         anchor=W,
         justify = LEFT,
-        bg="#D2D2D2"
+        bg="#D2D2D2",
+        font=("Roboto", 18 * -1)
     )
-    canvas.create_window(100, height, window=r)
+    canvas.create_window(20, height, anchor=W, window=r)
     height += 30
+
+
+#Radio Button 2
+confidence = StringVar()
+confidence.set(' ')
+scale = (('High Confidence', 'I'),
+         ('Moderate Confidence', 'T'),
+         ('Low Confidence', 'H'))
+
+height = 480
+for x in scale:
+    r2 = Radiobutton(
+        window,
+        text=x[0],
+        value=x[1],
+        variable=confidence,
+        anchor=W,
+        justify = LEFT,
+        bg="#D2D2D2",
+        font=("Roboto", 18 * -1)
+    )
+    canvas.create_window(20, height, anchor=W, window=r2)
+    height += 30
+
 
 
 
